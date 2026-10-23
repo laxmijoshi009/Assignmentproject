@@ -1,0 +1,28 @@
+<h1>9.Debug and correct a supplied buggy HTML file.</h1>
+The buggy HTML file:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Page<title>
+</head>
+<body>
+    <h1>Welcome</h2>
+    <p>This is my website.
+    <img src="photo.jpg">
+</body>
+</html>
+
+Correct version:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Page</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <p>This is my website.</p>
+    <img src="photo.jpg" alt="A photo">
+</body>
+</html>

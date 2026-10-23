@@ -1,0 +1,6 @@
+3.<h2> Complete a short terminal-navigation practice sheet.</h2>
+<p>pwd          # shows your current folder
+dir          # lists files and folders
+cd folderName    # enters a folder
+cd ..        # goes back one folder
+mkdir testFolder  # creates a new folder</p>

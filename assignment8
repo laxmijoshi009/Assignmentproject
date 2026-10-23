@@ -1,0 +1,41 @@
+<h2>8 Refactor the resume page to use semantic containers instead of plain text blocks.</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Resume</title>
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <p>Email: yourname@email.com</p>
+        <p>Phone: 1234567890</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>About Me</h2>
+            <p>I am a student learning web development.</p>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <p>College Name — Degree Name</p>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <p>HTML, CSS, Java, GitHub</p>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <h3>Portfolio Website</h3>
+            <p>A simple website created using HTML.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Your Name</p>
+    </footer>
+</body>
+</html>

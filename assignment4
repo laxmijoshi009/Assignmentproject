@@ -1,0 +1,13 @@
+4.<h2> Submit a repository with at least three meaningful commits.</h2>
+<p1> git add .
+git commit -m "Create initial HTML structure"
+
+git add .
+git commit -m "Add page content and headings"
+
+git add .
+git commit -m "Style page with CSS"</p1>
+git remote add origin https://github.com/laxmijoshi009/assignment4.git
+git push -u origin main.
+
+

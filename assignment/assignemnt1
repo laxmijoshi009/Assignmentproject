@@ -1,0 +1,2 @@
+1.<h2> Write a one-paragraph explanation of what happens between typing a URL and seeing the page.</h2>
+<p> When you enter a URL, the browser finds the website’s server using DNS and sends a request for the page. The server returns files such as HTML, CSS, JavaScript, images, and fonts. The browser combines these files to create the layout, style the content, and add interactive features before displaying the webpage.</p>
