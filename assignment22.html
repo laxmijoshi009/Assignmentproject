@@ -1,0 +1,77 @@
+<h1>22. Style a page using at least four different selector types correctly.</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My College and My Course</title>
+
+    <style>
+        /* 1. Element selector */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f5fa;
+            margin: 20px;
+        }
+
+        /* 2. Class selector */
+        .heading {
+            background-color: navy;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* 3. ID selector */
+        #college {
+            background-color: white;
+            border: 2px solid steelblue;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        /* 4. Descendant selector */
+        section p {
+            color: #444;
+            font-size: 16px;
+        }
+
+        /* 5. Group selector */
+        h2, h3 {
+            color: darkblue;
+        }
+
+        /* 6. Element selector */
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="heading">My College and My Course</h1>
+
+    <section id="college">
+        <h2>My College</h2>
+        <p><strong>College Name:</strong> Invertis University</p>
+        <p><strong>Location:</strong> Bareilly, Uttar Pradesh</p>
+    </section>
+
+    <section>
+        <h2>My Course</h2>
+        <p><strong>Course:</strong> BCA Artificial Intelligence</p>
+
+        <h3>My Subjects</h3>
+        <ul>
+            <li>Java Programming</li>
+            <li>Computer Fundamentals</li>
+            <li>Mathematics</li>
+            <li>Web Development</li>
+            <li>Artificial Intelligence</li>
+        </ul>
+    </section>
+
+</body>
+</html>

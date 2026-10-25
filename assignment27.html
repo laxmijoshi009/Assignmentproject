@@ -1,0 +1,76 @@
+<h1> Create three differently styled card variants using border-radius and backgrounds.</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Card Variants</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .card {
+            width: 220px;
+            padding: 25px;
+            box-shadow: 0 4px 10px #0002;
+        }
+
+        /* Card 1: Rounded card */
+        .card-one {
+            background: #dbeafe;
+            border-radius: 12px;
+        }
+
+        /* Card 2: Fully rounded card */
+        .card-two {
+            background: #dcfce7;
+            border-radius: 30px;
+        }
+
+        /* Card 3: Sharp corners */
+        .card-three {
+            background: #fce7f3;
+            border-radius: 0;
+            border: 2px solid #db2777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Three Card Variants</h1>
+    <p>Different backgrounds and border-radius styles</p>
+
+    <div class="container">
+
+        <div class="card card-one">
+            <h2>Card One</h2>
+            <p>Blue background with rounded corners.</p>
+        </div>
+
+        <div class="card card-two">
+            <h2>Card Two</h2>
+            <p>Green background with more rounded corners.</p>
+        </div>
+
+        <div class="card card-three">
+            <h2>Card Three</h2>
+            <p>Pink background with sharp corners and a border.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

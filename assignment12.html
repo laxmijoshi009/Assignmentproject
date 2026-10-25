@@ -1,0 +1,130 @@
+<h2>12 Ensure every image on the portfolio page has a meaningful alt attribute.</h2>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accessible Images Showcase with Alt Attributes and Figures – Laxmi Joshi">
+  <title>Accessible Images Showcase – Laxmi Joshi</title>
+</head>
+
+<body>
+  <header>
+    <h1>Accessible Images &amp; Figures Showcase</h1>
+    <p>Created by Laxmi Joshi · BCA with AI, Invertis University, Bareilly</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. Student Profile Image</h2>
+
+      <!-- Replace the image path with your own photo -->
+      <img src="assets/laxmi-profile.png"
+           width="200"
+           height="200"
+           alt="Profile portrait of Laxmi Joshi, BCA with AI student">
+
+      <p>Profile photo with specified dimensions to help prevent layout shifts.</p>
+    </section>
+
+    <section>
+      <h2>2. Project Figures with Captions</h2>
+
+      <figure>
+        <img src="https://picsum.photos/id/0/480/280"
+             width="480"
+             height="280"
+             alt="Laptop computer on a desk used for web development">
+
+        <figcaption>
+          Figure 1: Front-end development using VS Code.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://picsum.photos/id/60/480/280"
+             width="480"
+             height="280"
+             alt="Computer workstation with a notebook and coffee cup">
+
+        <figcaption>
+          Figure 2: Coding practice for Java and web development assignments.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>3. Decorative Background Banner</h2>
+
+      <img src="https://picsum.photos/id/1015/700/120"
+           width="700"
+           height="120"
+           alt="">
+
+      <p>
+        <em>The banner is decorative, so it uses an empty alt attribute.</em>
+      </p>
+    </section>
+
+    <section>
+      <h2>4. Linked Icon Images (Profiles)</h2>
+
+      <p>
+        <!-- Replace # with your actual profile URLs -->
+
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src="https://picsum.photos/id/1062/80/80"
+               width="80"
+               height="80"
+               alt="Visit Laxmi Joshi's GitHub profile">
+        </a>
+
+        <a href="#" target="_blank" rel="noopener noreferrer"
+           style="margin-left: 1rem;">
+          <img src="https://picsum.photos/id/1068/80/80"
+               width="80"
+               height="80"
+               alt="Visit Laxmi Joshi's LinkedIn profile">
+        </a>
+
+        <a href="#" target="_blank" rel="noopener noreferrer"
+           style="margin-left: 1rem;">
+          <img src="https://picsum.photos/id/1070/80/80"
+               width="80"
+               height="80"
+               alt="Visit Laxmi Joshi's LeetCode profile">
+
+        </a>
+      </p>
+
+      <p>
+        Click the images above to visit my GitHub, LinkedIn,
+        and LeetCode profiles after adding the correct URLs.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <hr>
+
+    <h3>Image Accessibility Rules Followed:</h3>
+
+    <ul>
+      <li>Informative images have meaningful alt text.</li>
+      <li>Alt text describes the image in context.</li>
+      <li>Decorative images use an empty alt attribute.</li>
+      <li>Linked images describe their destinations.</li>
+      <li>Figures use figcaption for captions.</li>
+    </ul>
+
+    <p>
+      <small>
+        &copy; 2026 Laxmi Joshi · BCA with AI ·
+        Invertis University, Bareilly
+      </small>
+    </p>
+  </footer>
+</body>
+
+</html>

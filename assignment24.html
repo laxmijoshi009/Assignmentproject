@@ -1,0 +1,91 @@
+<h1>Create a small design-token stylesheet (colours, font sizes) using CSS variables.</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Design Tokens</title>
+
+    <style>
+        /* Design Tokens */
+        :root {
+            /* Colours */
+            --primary-color: #1E293B;
+            --secondary-color: #0F766E;
+            --background-color: #F1F5F9;
+            --text-color: #334155;
+            --white-color: #FFFFFF;
+
+            /* Font Sizes */
+            --font-small: 14px;
+            --font-medium: 18px;
+            --font-large: 28px;
+            --font-heading: 36px;
+
+            /* Spacing */
+            --spacing-small: 10px;
+            --spacing-medium: 20px;
+            --spacing-large: 30px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: var(--spacing-medium);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: var(--spacing-large);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: var(--font-heading);
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            font-size: var(--font-large);
+        }
+
+        p {
+            font-size: var(--font-medium);
+        }
+
+        .small-text {
+            font-size: var(--font-small);
+        }
+
+        section {
+            background-color: var(--white-color);
+            padding: var(--spacing-medium);
+            margin-top: var(--spacing-medium);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Design Tokens</h1>
+        <p>Reusable CSS variables</p>
+    </header>
+
+    <section>
+        <h2>About CSS Variables</h2>
+        <p>
+            CSS variables help us reuse colours, font sizes,
+            and spacing throughout a website.
+        </p>
+        <p class="small-text">
+            This is small text using a design token.
+        </p>
+    </section>
+
+</body>
+</html>

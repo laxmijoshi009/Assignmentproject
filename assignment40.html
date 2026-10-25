@@ -1,0 +1,536 @@
+<h1>40 .Submit the finished Grid-based project.</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive product grid using CSS Grid">
+  <title>ShopZone | Product Grid</title>
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #1e293b;
+    }
+
+    /* Main page layout using named Grid areas */
+    .layout {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      grid-template-rows: 75px 1fr 55px;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    }
+
+    /* Header */
+    .header {
+      grid-area: header;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 0 30px;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 3px 12px #00000008;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #2563eb;
+    }
+
+    .search {
+      width: 40%;
+      max-width: 420px;
+      padding: 12px 16px;
+      border: 1px solid #cbd5e1;
+      border-radius: 25px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .search:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px #dbeafe;
+    }
+
+    .cart {
+      background: #eff6ff;
+      color: #1d4ed8;
+      padding: 11px 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      grid-area: sidebar;
+      background: #ffffff;
+      padding: 25px 20px;
+      border-right: 1px solid #e2e8f0;
+    }
+
+    .sidebar h2 {
+      font-size: 19px;
+      margin-bottom: 22px;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 13px;
+      margin-bottom: 8px;
+      border-radius: 9px;
+      text-decoration: none;
+      color: #475569;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    /* Main content */
+    .main {
+      grid-area: main;
+      padding: 30px;
+      min-width: 0;
+    }
+
+    .intro {
+      margin-bottom: 25px;
+    }
+
+    .intro h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .intro p {
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-heading h2 {
+      font-size: 22px;
+    }
+
+    .section-heading span {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    /* Responsive product grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    /* Product cards */
+    .product-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px #0f172a14;
+    }
+
+    .product-image {
+      height: 190px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 76px;
+      background: #eff6ff;
+    }
+
+    .product-card:nth-child(2) .product-image {
+      background: #fdf2f8;
+    }
+
+    .product-card:nth-child(3) .product-image {
+      background: #fef3c7;
+    }
+
+    .product-card:nth-child(4) .product-image {
+      background: #dcfce7;
+    }
+
+    .product-card:nth-child(5) .product-image {
+      background: #f3e8ff;
+    }
+
+    .product-card:nth-child(6) .product-image {
+      background: #ffedd5;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .category {
+      display: inline-block;
+      color: #2563eb;
+      background: #eff6ff;
+      padding: 5px 9px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .product-info h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .description {
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.5;
+      min-height: 40px;
+      margin-bottom: 14px;
+    }
+
+    .rating {
+      color: #d97706;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .product-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #0f172a;
+    }
+
+    .buy-button {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-decoration: none;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .buy-button:hover {
+      background: #1d4ed8;
+    }
+
+    /* Footer */
+    .footer {
+      grid-area: footer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    /* Tablet */
+    @media (max-width: 1050px) {
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .main {
+        padding: 22px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 650px) {
+      .layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "main"
+          "footer";
+      }
+
+      .header {
+        flex-wrap: wrap;
+        padding: 16px;
+        gap: 12px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      .search {
+        order: 3;
+        width: 100%;
+        max-width: none;
+      }
+
+      .sidebar {
+        padding: 12px;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .sidebar h2 {
+        margin-bottom: 10px;
+      }
+
+      .sidebar nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .sidebar a {
+        padding: 10px;
+        margin: 0;
+        font-size: 13px;
+      }
+
+      .main {
+        padding: 18px;
+      }
+
+      .intro h1 {
+        font-size: 25px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .product-image {
+        height: 130px;
+        font-size: 53px;
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .product-info h3 {
+        font-size: 15px;
+      }
+
+      .description {
+        font-size: 12px;
+      }
+
+      .price {
+        font-size: 16px;
+      }
+
+      .buy-button {
+        padding: 9px;
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="layout">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">🛍️ ShopZone</div>
+
+      <input
+        type="search"
+        class="search"
+        placeholder="Search products..."
+        aria-label="Search products"
+      >
+
+      <div class="cart">🛒 My Cart</div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Categories</h2>
+
+      <nav aria-label="Product categories">
+        <a href="#products" class="active">🏠 All Products</a>
+        <a href="#electronics">💻 Electronics</a>
+        <a href="#fashion">👕 Fashion</a>
+        <a href="#accessories">⌚ Accessories</a>
+        <a href="#footer">ℹ️ About ShopZone</a>
+      </nav>
+    </aside>
+
+    <!-- Main product section -->
+    <main class="main" id="products">
+
+      <section class="intro">
+        <h1>Discover Our Products ✨</h1>
+        <p>Find your favorite products at amazing prices.</p>
+      </section>
+
+      <div class="section-heading">
+        <h2>Featured Products</h2>
+        <span>6 products</span>
+      </div>
+
+      <section class="product-grid" aria-label="Featured products">
+
+        <article class="product-card" id="electronics">
+          <div class="product-image" role="img" aria-label="Laptop illustration">
+            💻
+          </div>
+          <div class="product-info">
+            <span class="category">ELECTRONICS</span>
+            <h3>Smart Laptop</h3>
+            <p class="description">Powerful performance for study and work.</p>
+            <p class="rating">★★★★★ (4.8)</p>
+            <div class="product-bottom">
+              <span class="price">₹45,999</span>
+              <a class="buy-button" href="#footer">View</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" id="fashion">
+          <div class="product-image" role="img" aria-label="Headphones illustration">
+            🎧
+          </div>
+          <div class="product-info">
+            <span class="category">ELECTRONICS</span>
+            <h3>Wireless Headphones</h3>
+            <p class="description">Enjoy music with clear, rich sound.</p>
+            <p class="rating">★★★★★ (4.7)</p>
+            <div class="product-bottom">
+              <span class="price">₹1,999</span>
+              <a class="buy-button" href="#footer">View</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image" role="img" aria-label="Watch illustration">
+            ⌚
+          </div>
+          <div class="product-info">
+            <span class="category">ACCESSORIES</span>
+            <h3>Classic Watch</h3>
+            <p class="description">A stylish watch for everyday use.</p>
+            <p class="rating">★★★★☆ (4.5)</p>
+            <div class="product-bottom">
+              <span class="price">₹2,499</span>
+              <a class="buy-button" href="#footer">View</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image" role="img" aria-label="Sports shoes illustration">
+            👟
+          </div>
+          <div class="product-info">
+            <span class="category">FASHION</span>
+            <h3>Sports Sneakers</h3>
+            <p class="description">Comfortable shoes for active days.</p>
+            <p class="rating">★★★★★ (4.6)</p>
+            <div class="product-bottom">
+              <span class="price">₹1,799</span>
+              <a class="buy-button" href="#footer">View</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image" role="img" aria-label="Backpack illustration">
+            🎒
+          </div>
+          <div class="product-info">
+            <span class="category">ACCESSORIES</span>
+            <h3>College Backpack</h3>
+            <p class="description">Carry your books and laptop with ease.</p>
+            <p class="rating">★★★★★ (4.8)</p>
+            <div class="product-bottom">
+              <span class="price">₹999</span>
+              <a class="buy-button" href="#footer">View</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image" role="img" aria-label="Camera illustration">
+            📷
+          </div>
+          <div class="product-info">
+            <span class="category">ELECTRONICS</span>
+            <h3>Digital Camera</h3>
+            <p class="description">Capture your favorite memories.</p>
+            <p class="rating">★★★★☆ (4.4)</p>
+            <div class="product-bottom">
+              <span class="price">₹12,499</span>
+              <a class="buy-button" href="#footer">View</a>
+            </div>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+      © 2026 ShopZone | Responsive CSS Grid Project
+    </footer>
+
+  </div>
+
+</body>
+</html>

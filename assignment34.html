@@ -1,0 +1,260 @@
+<h1> 34 . Build a responsive Navbar + Hero section using Flexbox.</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar and Hero</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #1e293b;
+            background: #f8fafc;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #ffffff;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #4f46e5;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4f46e5;
+        }
+
+        .nav-btn {
+            background: #4f46e5;
+            color: white !important;
+            padding: 11px 20px;
+            border-radius: 8px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 85vh;
+            padding: 70px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+        }
+
+        .hero-content {
+            flex: 1 1 300px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #ddd6fe;
+            color: #5b21b6;
+            padding: 8px 14px;
+            border-radius: 30px;
+            font-size: 14px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: #172554;
+        }
+
+        .hero h1 span {
+            color: #4f46e5;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #64748b;
+            max-width: 520px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #4f46e5;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: #3730a3;
+        }
+
+        .secondary-btn {
+            border: 2px solid #4f46e5;
+            color: #4f46e5;
+        }
+
+        .secondary-btn:hover {
+            background: #4f46e5;
+            color: white;
+        }
+
+        /* HERO ILLUSTRATION */
+        .hero-image {
+            flex: 1 1 280px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #818cf8, #c084fc);
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.2);
+            font-size: clamp(90px, 15vw, 150px);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            background: white;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 650px) {
+            .navbar {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 18px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 20px;
+                gap: 35px;
+            }
+
+            .hero-content {
+                flex-basis: auto;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                width: 100%;
+                min-height: 240px;
+                flex-basis: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">WebNova.</div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact" class="nav-btn">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <main>
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+                <span class="tag">✨ Welcome to WebNova</span>
+
+                <h1>
+                    Build Your <span>Digital Future</span> With Us
+                </h1>
+
+                <p>
+                    Explore creative ideas, modern web design, and
+                    innovative digital solutions. Start your journey
+                    towards building something amazing today.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#services" class="btn primary-btn">
+                        Get Started →
+                    </a>
+
+                    <a href="#about" class="btn secondary-btn">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image" aria-label="Creative technology illustration">
+                💻
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 WebNova. Designed with Flexbox.</p>
+    </footer>
+
+</body>
+</html>

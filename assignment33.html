@@ -1,0 +1,209 @@
+<h1>4 Build a responsive Navbar + Hero section using Flexbox.</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing | Flexbox</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f8;
+            color: #222;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #cbd5e1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #172554;
+        }
+
+        /* Flexbox Product Listing */
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        /* Individual Product Card */
+        .product-card {
+            background: white;
+            width: 250px;
+            flex: 1 1 220px;
+            max-width: 270px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.14);
+        }
+
+        .product-image {
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 75px;
+            background: #e0e7ff;
+        }
+
+        .product-card:nth-child(2) .product-image {
+            background: #fce7f3;
+        }
+
+        .product-card:nth-child(3) .product-image {
+            background: #dcfce7;
+        }
+
+        .product-card:nth-child(4) .product-image {
+            background: #fef3c7;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        .rating {
+            color: #f59e0b;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #172554;
+            margin-bottom: 15px;
+        }
+
+        .buy-btn {
+            display: block;
+            width: 100%;
+            padding: 11px;
+            text-align: center;
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .buy-btn:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            text-align: center;
+            background: #172554;
+            color: white;
+            padding: 18px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 500px) {
+            .product-card {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>ShopSmart</h1>
+        <p>Discover products you will love!</p>
+    </header>
+
+    <main class="container">
+        <h2>Featured Products</h2>
+
+        <section class="product-list">
+
+            <article class="product-card">
+                <div class="product-image" aria-hidden="true">🎧</div>
+                <div class="product-info">
+                    <h3>Wireless Headphones</h3>
+                    <p class="rating">★★★★★ (4.8)</p>
+                    <p class="price">₹1,499</p>
+                    <a href="#" class="buy-btn">View Product</a>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image" aria-hidden="true">⌚</div>
+                <div class="product-info">
+                    <h3>Smart Watch</h3>
+                    <p class="rating">★★★★☆ (4.5)</p>
+                    <p class="price">₹2,299</p>
+                    <a href="#" class="buy-btn">View Product</a>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image" aria-hidden="true">🎒</div>
+                <div class="product-info">
+                    <h3>Travel Backpack</h3>
+                    <p class="rating">★★★★★ (4.7)</p>
+                    <p class="price">₹999</p>
+                    <a href="#" class="buy-btn">View Product</a>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image" aria-hidden="true">📷</div>
+                <div class="product-info">
+                    <h3>Digital Camera</h3>
+                    <p class="rating">★★★★☆ (4.4)</p>
+                    <p class="price">₹5,499</p>
+                    <a href="#" class="buy-btn">View Product</a>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ShopSmart | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

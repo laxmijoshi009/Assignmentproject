@@ -1,0 +1,179 @@
+<h1>36 Build a simple photo gallery using CSS Grid.</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A responsive photo gallery built with CSS Grid.">
+    <title>Photo Gallery | CSS Grid</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #312e81, #7c3aed);
+            color: white;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #ede9fe;
+            line-height: 1.6;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .gallery-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        /* CSS Grid Layout */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            display: block;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .caption {
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        /* Tablet */
+        @media (max-width: 800px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item img {
+                height: 230px;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #312e81;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>📸 My Photo Gallery</h1>
+        <p>Beautiful moments, captured forever.</p>
+    </header>
+
+    <main class="gallery-container">
+        <h2>Explore the World</h2>
+
+        <section class="gallery">
+
+            <article class="gallery-item">
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700"
+                    alt="Beautiful green landscape with mountains">
+                <div class="caption">Mountain Views</div>
+            </article>
+
+            <article class="gallery-item">
+                <img
+                    src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=700"
+                    alt="Peaceful lake surrounded by mountains">
+                <div class="caption">Peaceful Lakes</div>
+            </article>
+
+            <article class="gallery-item">
+                <img
+                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700"
+                    alt="Blue ocean waves meeting a sandy beach">
+                <div class="caption">Sunny Beaches</div>
+            </article>
+
+            <article class="gallery-item">
+                <img
+                    src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=700"
+                    alt="Sunlight shining through a green forest">
+                <div class="caption">Green Forests</div>
+            </article>
+
+            <article class="gallery-item">
+                <img
+                    src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700"
+                    alt="Mountain peaks under a starry night sky">
+                <div class="caption">Starry Nights</div>
+            </article>
+
+            <article class="gallery-item">
+                <img
+                    src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=700"
+                    alt="Golden sunrise over a peaceful landscape">
+                <div class="caption">Golden Sunrises</div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Photo Gallery | Designed with CSS Grid</p>
+    </footer>
+
+</body>
+</html>
